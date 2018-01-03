@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="_WS_OCR_File_Data_Sub">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Datos" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="_WS_OCR_File_Data_SubResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_WS_OCR_File_Data_SubResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="_WS_OCR_File_Data_SubSoapIn">
+    <wsdl:part name="parameters" element="tns:_WS_OCR_File_Data_Sub" />
+  </wsdl:message>
+  <wsdl:message name="_WS_OCR_File_Data_SubSoapOut">
+    <wsdl:part name="parameters" element="tns:_WS_OCR_File_Data_SubResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_OCR_File_Data_SubSoap">
+    <wsdl:operation name="_WS_OCR_File_Data_Sub">
+      <wsdl:input message="tns:_WS_OCR_File_Data_SubSoapIn" />
+      <wsdl:output message="tns:_WS_OCR_File_Data_SubSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_OCR_File_Data_SubSoap" type="tns:WS_OCR_File_Data_SubSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="_WS_OCR_File_Data_Sub">
+      <soap:operation soapAction="http://tempuri.org/_WS_OCR_File_Data_Sub" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_OCR_File_Data_SubSoap12" type="tns:WS_OCR_File_Data_SubSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="_WS_OCR_File_Data_Sub">
+      <soap12:operation soapAction="http://tempuri.org/_WS_OCR_File_Data_Sub" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_OCR_File_Data_Sub">
+    <wsdl:port name="WS_OCR_File_Data_SubSoap" binding="tns:WS_OCR_File_Data_SubSoap">
+      <soap:address location="http://auraportal.lateetud.com/WS/WS_OCR_File_Data_Sub.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_OCR_File_Data_SubSoap12" binding="tns:WS_OCR_File_Data_SubSoap12">
+      <soap12:address location="http://auraportal.lateetud.com/WS/WS_OCR_File_Data_Sub.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

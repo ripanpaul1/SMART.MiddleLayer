@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:blueprism:webservice:initblueprismdataitemfromc" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="InitBlueprismDataItemfromCService" targetNamespace="urn:blueprism:webservice:initblueprismdataitemfromc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="urn:blueprism:webservice:initblueprismdataitemfromc" />
+  </wsdl:types>
+  <wsdl:message name="InitBlueprismDataItemfromCRequest">
+    <wsdl:part name="Input" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InitBlueprismDataItemfromCResponse">
+    <wsdl:part name="Output" type="s:string" />
+  </wsdl:message>
+  <wsdl:portType name="InitBlueprismDataItemfromCPortType">
+    <wsdl:operation name="InitBlueprismDataItemfromC">
+      <wsdl:input message="tns:InitBlueprismDataItemfromCRequest" />
+      <wsdl:output message="tns:InitBlueprismDataItemfromCResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InitBlueprismDataItemfromCSoapBinding" type="tns:InitBlueprismDataItemfromCPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InitBlueprismDataItemfromC">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:blueprism:webservice:initblueprismdataitemfromc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:blueprism:webservice:initblueprismdataitemfromc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InitBlueprismDataItemfromCService">
+    <wsdl:port name="InitBlueprismDataItemfromCSoap" binding="tns:InitBlueprismDataItemfromCSoapBinding">
+      <soap:address location="http://BPMSERVER:8181/ws/InitBlueprismDataItemfromC" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
